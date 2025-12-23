@@ -1,0 +1,12 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    "./patch-endo.js": "./src/patch-endo.js"
+  },
+  "dependencies": {
+    "@endo/init": "^1.1.6"
+  }
+}

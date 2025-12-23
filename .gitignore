@@ -1,3 +1,7 @@
 node_modules/
 *.log
 .DS_Store
+pkg/
+rust/syndicate_core/pkg/
+rust/syndicate_core/target/
+target/

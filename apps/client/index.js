@@ -1,8 +1,8 @@
 // This simulates Peer A, the Mobile Agent initiating a connection
 // and attempting to access a remote, secure resource using CapTP.
 
-// Patch for Node.js 22 compatibility
-import './patch-endo.js';
+// Patch for Node.js 22 compatibility via shared package
+import 'shared/patch-endo.js';
 
 import { makeCapTP } from '@endo/captp';
 import { E } from '@endo/far';

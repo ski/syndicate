@@ -1,8 +1,8 @@
 // This simulates Peer B, a machine hosting a secure resource (like a private log).
 // It listens for an incoming IPv6 P2P connection and exposes a limited capability.
 
-// Patch for Node.js 22 compatibility
-import './patch-endo.js';
+// Patch for Node.js 22 compatibility via shared package
+import 'shared/patch-endo.js';
 
 import { makeCapTP } from '@endo/captp';
 import { Far } from '@endo/far';
@@ -43,7 +43,7 @@ async function main() {
     
     // Create the CapTP connection over the raw TCP socket
     // The third argument is the bootstrap object that the client will receive
-    const { dispatch, getBootstrap } = makeCapTP(
+    const { dispatch } = makeCapTP(
       'server',
       (data) => socket.write(JSON.stringify(data)),
       netHost  // Bootstrap object

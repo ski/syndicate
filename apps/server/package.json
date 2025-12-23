@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@endo/captp": "^4.4.8",
+    "@endo/far": "^1.1.8",
+    "shared": "file:../../packages/shared"
+  }
+}

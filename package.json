@@ -1,19 +1,23 @@
 {
   "name": "syndicate",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "server.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server.js",
-    "client": "node client.js"
+    "dev": "concurrently -n server,client -c green,blue \"npm run -w server dev\" \"wait-on tcp:localhost:8000 && npm run -w client dev\"",
+    "server:dev": "npm run -w server dev",
+    "client:dev": "npm run -w client dev",
+    "client:dev:wait": "wait-on tcp:localhost:8000 && npm run -w client dev"
   },
-  "dependencies": {
-    "@endo/init": "^1.1.6",
-    "@endo/captp": "^4.4.8",
-    "@endo/far": "^1.1.8"
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "wait-on": "^8.0.0"
   }
 }
